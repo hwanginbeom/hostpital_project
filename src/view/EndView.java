@@ -36,8 +36,12 @@ public class EndView {
 
 	}
 
-	public static void printOne(Hospital_PeopleDTO hospital_PeopleDTO) {
+	public static void printPeople(Hospital_PeopleDTO hospital_PeopleDTO) {
 		System.out.println(hospital_PeopleDTO);
+	}
+	
+	public static void printTotal(Hospital_TotalDTO hospital_TotalDTO) {
+		System.out.println(hospital_TotalDTO);
 	}
 	
 

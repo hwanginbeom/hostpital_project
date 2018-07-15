@@ -45,7 +45,7 @@ public class Hospital_TotalDAO {
 
 	// deptno로 해당 부서 정보검색
 	// ?
-	public static Hospital_TotalDTO gettoal(String loc) throws SQLException {
+	public static Hospital_TotalDTO getTotal(String loc) throws SQLException {
 		Connection con = null; // 중괄호 부분이 끝나면 휘발되기 때문에 밖에서 선언해준다.
 		Hospital_TotalDTO data = null;
 		PreparedStatement pstmt = null; // alt+shift + r 로 해당 하는 모든 부분을 한번에 수정한다.
@@ -88,7 +88,7 @@ public class Hospital_TotalDAO {
 	// public static boolean insert(int deptno, String dname,String loc) {
 	// return false;
 	// }
-	public static boolean toalInsert(Hospital_TotalDTO newDept) throws SQLException {
+	public static boolean totalInsert(Hospital_TotalDTO newDept) throws SQLException {
 		Connection con = null; // 중괄호 부분이 끝나면 휘발되기 때문에 밖에서 선언해준다.
 		// 이 객체가 생성되는 시점엔 이미 고정 된 sql문장이 내장
 		PreparedStatement pstmt = null; // alt+shift + r 로 해당 하는 모든 부분을 한번에 수정한다.
@@ -149,7 +149,7 @@ public class Hospital_TotalDAO {
 	}
 
 	// loc 로 hospital 수정
-	public static boolean toalUpdate(String loc, int hospital) throws SQLException {
+	public static boolean totalUpdate(String loc, int hospital) throws SQLException {
 		Connection con = null; // 중괄호 부분이 끝나면 휘발되기 때문에 밖에서 선언해준다.
 		// 이 객체가 생성되는 시점엔 이미 고정 된 sql문장이 내장
 		PreparedStatement pstmt = null; // alt+shift + r 로 해당 하는 모든 부분을 한번에 수정한다.
@@ -183,7 +183,7 @@ public class Hospital_TotalDAO {
 	}
 
 	// deptno 로 해당 부서 삭제
-	public static boolean toalDelete(String loc) throws SQLException {
+	public static boolean totalDelete(String loc) throws SQLException {
 		Connection con = null; // 중괄호 부분이 끝나면 휘발되기 때문에 밖에서 선언해준다.
 		// 이 객체가 생성되는 시점엔 이미 고정 된 sql문장이 내장
 		PreparedStatement pstmt = null; // alt+shift + r 로 해당 하는 모든 부분을 한번에 수정한다.
