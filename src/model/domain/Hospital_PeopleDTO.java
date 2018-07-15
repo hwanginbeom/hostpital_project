@@ -1,5 +1,7 @@
 package model.domain;
 
+import java.util.ArrayList;
+
 public class Hospital_PeopleDTO {
 	private String loc;
 	private int full_Time;
@@ -149,6 +151,11 @@ public class Hospital_PeopleDTO {
 		builder.append(med_Roc);
 		builder.append("]");
 		return builder.toString();
+	}
+
+	public static ArrayList<Hospital_PeopleDTO> getAll() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 	

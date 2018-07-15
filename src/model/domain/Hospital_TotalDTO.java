@@ -22,6 +22,7 @@ public class Hospital_TotalDTO {
 	private int dent_Bed;
 	private int dent_Clinic_Hospital;
 	private int dent_Clinic_Bed;
+	private int herb_Hospital;
 	private int herb_Bed;
 	private int herb_Clinic_Hospital;
 	private int herb_Clinic_Bed;
@@ -34,8 +35,8 @@ public class Hospital_TotalDTO {
 	public Hospital_TotalDTO(String loc, int gnr_Hospital, int gnr_Bed, int hospital, int h_Bed, int clinic_Hospital,
 			int clinic_Bed, int aff_Hospital, int aff_Bed, int nur_Hospital, int nur_Bed, int snr_Hospital, int snr_Bed,
 			int tub_Hospital, int tub_Bed, int mental_hospital, int mental_Bed, int dent_Hospital, int dent_Bed,
-			int dent_Clinic_Hospital, int dent_Clinic_Bed, int herb_Bed, int herb_Clinic_Hospital, int herb_Clinic_Bed,
-			int maternity_Hospital, int maternity_Bed) {
+			int dent_Clinic_Hospital, int dent_Clinic_Bed, int herb_Hospital, int herb_Bed, int herb_Clinic_Hospital,
+			int herb_Clinic_Bed, int maternity_Hospital, int maternity_Bed) {
 		super();
 		this.loc = loc;
 		this.gnr_Hospital = gnr_Hospital;
@@ -58,6 +59,7 @@ public class Hospital_TotalDTO {
 		this.dent_Bed = dent_Bed;
 		this.dent_Clinic_Hospital = dent_Clinic_Hospital;
 		this.dent_Clinic_Bed = dent_Clinic_Bed;
+		this.herb_Hospital = herb_Hospital;
 		this.herb_Bed = herb_Bed;
 		this.herb_Clinic_Hospital = herb_Clinic_Hospital;
 		this.herb_Clinic_Bed = herb_Clinic_Bed;
@@ -190,6 +192,12 @@ public class Hospital_TotalDTO {
 	public void setDent_Clinic_Bed(int dent_Clinic_Bed) {
 		this.dent_Clinic_Bed = dent_Clinic_Bed;
 	}
+	public int getHerb_Hospital() {
+		return herb_Hospital;
+	}
+	public void setHerb_Hospital(int herb_Hospital) {
+		this.herb_Hospital = herb_Hospital;
+	}
 	public int getHerb_Bed() {
 		return herb_Bed;
 	}
@@ -265,6 +273,8 @@ public class Hospital_TotalDTO {
 		builder.append(dent_Clinic_Hospital);
 		builder.append(", dent_Clinic_Bed=");
 		builder.append(dent_Clinic_Bed);
+		builder.append(", herb_Hospital=");
+		builder.append(herb_Hospital);
 		builder.append(", herb_Bed=");
 		builder.append(herb_Bed);
 		builder.append(", herb_Clinic_Hospital=");
@@ -278,6 +288,7 @@ public class Hospital_TotalDTO {
 		builder.append("]");
 		return builder.toString();
 	}
+	
 	
 	
 }

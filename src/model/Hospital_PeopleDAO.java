@@ -23,7 +23,7 @@ public class Hospital_PeopleDAO {
 			// Connection con =DBUtil.getConnection(); // 위에서 null값으로 초기화 try 문이 안될수도있어서.
 			con = DBUtil.getConnection(); // 연결 한다 !
 			stmt = con.createStatement(); // sql문장을 실행 가능하게 하는 객체를 만드는 문장
-			rs = stmt.executeQuery("select * from HOSPITAL_TOTAL"); // 넣어준다 !
+			rs = stmt.executeQuery("select * from HOSPITAL_PEOPLE"); // 넣어준다 !
 
 			datas = new ArrayList<Hospital_PeopleDTO>();
 			while (rs.next()) { // 다음꺼 있는지 확인
@@ -42,7 +42,7 @@ public class Hospital_PeopleDAO {
 
 	// deptno로 해당 부서 정보검색
 	// ?
-	public static Hospital_PeopleDTO getDept(int loc) throws SQLException {
+	public static Hospital_PeopleDTO getPeople(String loc) throws SQLException {
 		Connection con = null; // 중괄호 부분이 끝나면 휘발되기 때문에 밖에서 선언해준다.
 		Hospital_PeopleDTO data = null;
 		PreparedStatement pstmt = null; // alt+shift + r 로 해당 하는 모든 부분을 한번에 수정한다.
@@ -52,7 +52,7 @@ public class Hospital_PeopleDAO {
 			con = DBUtil.getConnection(); // 연결 한다 !
 			// 고정된 문장으로 sql 실행 객체 생성(접속 객체)
 			pstmt = con.prepareStatement("select * from HOSPITAL_PEOPLE where loc = ?"); // 컬럼수 만큼 ?한다.
-			pstmt.setInt(1, loc);
+			pstmt.setString(1, loc);
 			rs = pstmt.executeQuery();
 			
 			while(rs.next()) { //컬럼으로만 본다.
@@ -82,7 +82,7 @@ public class Hospital_PeopleDAO {
 	// public static boolean insert(int deptno, String dname,String loc) {
 	// return false;
 	// }
-	public static boolean insert(Hospital_PeopleDTO newDept) throws SQLException {
+	public static boolean peopleInsert(Hospital_PeopleDTO newDept) throws SQLException {
 		Connection con = null; // 중괄호 부분이 끝나면 휘발되기 때문에 밖에서 선언해준다.
 		// 이 객체가 생성되는 시점엔 이미 고정 된 sql문장이 내장
 		PreparedStatement pstmt = null; // alt+shift + r 로 해당 하는 모든 부분을 한번에 수정한다.
@@ -127,7 +127,7 @@ public class Hospital_PeopleDAO {
 	}
 
 	// loc 로 hospital 수정
-	public static boolean update(String loc, int hospital) throws SQLException {
+	public static boolean peopleUpdate(String loc, int FullTime) throws SQLException {
 		Connection con = null; // 중괄호 부분이 끝나면 휘발되기 때문에 밖에서 선언해준다.
 		// 이 객체가 생성되는 시점엔 이미 고정 된 sql문장이 내장
 		PreparedStatement pstmt = null; // alt+shift + r 로 해당 하는 모든 부분을 한번에 수정한다.
@@ -135,9 +135,9 @@ public class Hospital_PeopleDAO {
 			// Connection con =DBUtil.getConnection(); // 위에서 null값으로 초기화 try 문이 안될수도있어서.
 			con = DBUtil.getConnection(); // 연결 한다 
 			// 고정된 문장으로 sql 실행 객체 생성(접속 객체)
-			pstmt = con.prepareStatement("update HOSPITAL_PEOPLE set hospital= ? where loc =? "); // 컬럼수 만큼 ?한다.
+			pstmt = con.prepareStatement("update HOSPITAL_PEOPLE set FULL_TIME= ? where loc =? "); // 컬럼수 만큼 ?한다.
 			// ?에 데이터 값 순차적으로 셋팅(문장실행객체)
-			pstmt.setInt(1, hospital); // 물음표 순번 / 값에대한 것  
+			pstmt.setInt(1, FullTime); // 물음표 순번 / 값에대한 것  
 			pstmt.setString(2, loc); // 물음표 순번 / 값에대한 것
 			// db에 실제 실행
 			int result = pstmt.executeUpdate(); // insert/update/delete 실행 메소드
@@ -161,7 +161,7 @@ public class Hospital_PeopleDAO {
 	}
 
 	// deptno 로 해당 부서 삭제
-	public static boolean delete(int loc) throws SQLException {
+	public static boolean peopleDelete(String loc) throws SQLException {
 		Connection con = null; // 중괄호 부분이 끝나면 휘발되기 때문에 밖에서 선언해준다.
 		// 이 객체가 생성되는 시점엔 이미 고정 된 sql문장이 내장
 		PreparedStatement pstmt = null; // alt+shift + r 로 해당 하는 모든 부분을 한번에 수정한다.
@@ -173,7 +173,7 @@ public class Hospital_PeopleDAO {
 			// 고정된 문장으로 sql 실행 객체 생성(접속 객체)
 			pstmt = con.prepareStatement("delete from HOSPITAL_PEOPLE where loc = ?"); // 컬럼수 만큼 ?한다.
 
-			pstmt.setInt(1, loc); // 물음표 순번 / 값에대한 것
+			pstmt.setString(1, loc); // 물음표 순번 / 값에대한 것
 			// db에 실제 실행
 			int result = pstmt.executeUpdate(); // insert/update/delete 실행 메소드
 												// 값을 이미 다넣었기 때문에 매개변수가 필요 없다.

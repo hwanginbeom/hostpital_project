@@ -19,11 +19,17 @@ public class Controller {
 	private Controller() {
 	}
 
-	public void getDeptAll() {
+	// 모든 검색
+	/*
+	 * 발생 가능한 경우의 수 1. 정상 실행 -데이터가 있다 :EndView에게 ArrayList 객체 전송 -데이터가 없다 :
+	 * EndView에서 검색한 데이터 없다. 2.비정상 실행 -예외 발생 : 죄송합니다. 잠시후에 재 요청 바랍니다...메세지
+	 */
+	
+	public void getPeopleAll() {
 		try {
 			ArrayList<Hospital_PeopleDTO> datas = Hospital_PeopleDAO.getAll(); // 정상
 			if (datas.size() != 0) {
-				EndView.printAll(datas);
+				EndView.peopleAll(datas);
 			} else {
 				EndView.succMsg("검색한 데이터가 없습니다."); // 정상이지만 데이터가 없을 경우
 			}
@@ -32,11 +38,6 @@ public class Controller {
 			EndView.errorMsg("죄송합니다 . 잠시후에 재 요청 바랍니다.");
 		}
 	}
-	// 모든 검색
-	/*
-	 * 발생 가능한 경우의 수 1. 정상 실행 -데이터가 있다 :EndView에게 ArrayList 객체 전송 -데이터가 없다 :
-	 * EndView에서 검색한 데이터 없다. 2.비정상 실행 -예외 발생 : 죄송합니다. 잠시후에 재 요청 바랍니다...메세지
-	 */
 
 	// insert
 	/*
@@ -45,10 +46,10 @@ public class Controller {
 	 * 메세지... -
 	 */
 
-	public void getDept(int deptno) {
+	public void getPeople(String String) {
 		try {
-			if (Hospital_PeopleDAO.getDept(deptno) != null) {
-				EndView.printOne(Hospital_PeopleDAO.getDept(deptno));
+			if (Hospital_PeopleDAO.getPeople(String) != null) {
+				EndView.printOne(Hospital_PeopleDAO.getPeople(String));
 			} else {
 				EndView.errorMsg("검색한 데이터가 없습니다.");
 			}
@@ -59,9 +60,9 @@ public class Controller {
 		}
 	}
 
-	public void insert(Hospital_PeopleDTO newDto) {
+	public void peopleInsert(Hospital_PeopleDTO newDto) {
 		try {
-			if (Hospital_PeopleDAO.insert(newDto)) {
+			if (Hospital_PeopleDAO.peopleInsert(newDto)) {
 				EndView.succMsg("새로운 부서 정보 저장 성공");
 			}
 		} catch (SQLException e) {
@@ -70,9 +71,9 @@ public class Controller {
 		}
 	}
 
-	public void delete(int deptno) {
+	public void peopleDelete(String loc) {
 		try {
-			if (Hospital_PeopleDAO.delete(deptno)) {
+			if (Hospital_PeopleDAO.peopleDelete(loc)) {
 				EndView.succMsg("부서 삭제 성공");
 			}
 		} catch (SQLException e) {
@@ -81,9 +82,9 @@ public class Controller {
 		}
 	}
 
-	public void update(int deptno, String newLoc) {
+	public void peopleUpdate(String loc, int hospital) {
 		try {
-			if (Hospital_PeopleDAO.update(newLoc ,deptno) ) {
+			if (Hospital_PeopleDAO.peopleUpdate(loc ,hospital) ) {
 				EndView.succMsg("수정 성공 하였습니다.");
 			} else {
 				EndView.succMsg("검색한 데이터가 없습니다.");
