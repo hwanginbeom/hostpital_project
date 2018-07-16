@@ -3,15 +3,15 @@ package view;
 import java.util.Scanner;
 
 import controller.Controller;
+import model.Hospital_TotalDAO;
 
 public class StartView {
-	public static void main(String[] args) {
+	public static void main(String[] args)  {
 		// 賅萇 匐儀
 		Controller controller = Controller.getInstance();
 		
 		Scanner scan = new Scanner(System.in);
-		int result = 0;
-		int addyear = 2045;
+		int result = 10;
 		
 		while( result != 0) {
 		System.out.println("***********詭景***********");
@@ -30,78 +30,101 @@ public class StartView {
 
 		case 1: 
 		
-		System.out.println("*** 煎馨檜暮 滌 煽錳 瞪羹 爾晦 ***");
+		System.out.println("*********** 煎馨檜暮 滌 煽錳 瞪羹 爾晦 **************");
 		System.out.println();
 		System.out.println();
-
-		System.out.println("*** peopleList 等檜攪  ***");
+		controller.getTotalAll();
+		System.out.println("                   天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天");
 		System.out.println("                   天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天");
 
-		PeopleController.all();
-		System.out.println("                   天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天");
-
-		System.out.println();
-		System.out.println();
-
-
-		
-
-		System.out.println("*** peopleFare 等檜攪  ***");
-		System.out.println("                           天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天");
-		PeopleController.allFare();
-		System.out.println("                           天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天");
-
-		
 		break;
 		//匐儀 - id 煎 匐儀
 		case 2:
-		while(result!=0) {
-			System.out.println("*** 翱紫蒂 匐儀 ж衛啊蝗棲梱? 1(yes) /0(no) ");
-			result = scan.nextInt();
-			if(result ==0) {
-				break;
-			}
-		System.out.print("*** 翱紫蒂 殮溘ж撮蹂 :  ");
-		result = scan.nextInt();
-//		PeopleController.getpeople(2020);
-		PeopleController.getFare(result);
+			System.out.println("*********** 煎馨檜暮 滌 曖猿檣溘熱 瞪羹 爾晦 **************");
+			System.out.println();
+			System.out.println();
+			System.out.println("                   天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天");
+			controller.getPeopleAll();
+
+			System.out.println("                   天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天");
+
 		
-		}
 
 		break;
 
 		case 3:
 
-//		//陛殮
-//		PeopleDTO newOne = new PeopleDTO(2100,2020200,303,3030303,4040,1010101,40404,10101010);
-//		PeopleController.addpeople(newOne);
-//		PeopleController.all();
+		// 煎馨檜暮 滌 煽錳 匐儀 
 		while(result!=0) {
-		System.out.println("*** 等檜攪蒂 蹺陛 ж衛啊蝗棲梱? 1(yes) /0(no) ");
+		System.out.println("*** 煎馨檜暮 滌 煽錳 匐儀擊 ж衛啊蝗棲梱? 1(yes) / 0(no) ");
 		result = scan.nextInt();
-		if(result ==0) {
+		int result2 = 10;
+			if(result ==0 || result2==0) {
 			break;
+			}
+			while(result2!=0) {
+				System.out.println("*** "+ "瓊堅濠 ж朝 煽錳擊 堅腦衛螃 ");
+				System.out.println("1)謙м煽錳   2)煽錳   3)纂婁   4)и曖錳/и寞煽錳   5)褻骯錳   6)蹂曄/喻檣瞪僥煽錳   "
+						+ "7)唸р煽錳   8)薑褐煽錳 ");
+				result2 = scan.nextInt();
+
+
+				switch (result2) {
+			
+			case 1:
+			System.out.println("***謙м煽錳曖 熱***");
+					try {
+						for( int i=0 ; i <=Hospital_TotalDAO.getAll().size() ; i++) {
+						System.out.println(Hospital_TotalDAO.getAll().get(i).getLoc()+"雖羲曖"+" 謙м煽錳曖 熱:"
+						+Hospital_TotalDAO.getAll().get(i).getGnr_Hospital()+" 謙м煽錳 煽鼻 熱 "
+								+Hospital_TotalDAO.getAll().get(i).getGnr_Bed());
+						}
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+			break;
+				
+			case 2:
+				System.out.println("***煽錳曖 熱***");
+				break;
+				
+			case 3:
+				System.out.println("***纂婁曖 熱***");
+				break;
+				
+			case 4:
+				System.out.println("***и曖錳/и寞煽錳曖 熱***");
+				break;
+				
+			case 5:
+				System.out.println("***褻骯錳曖 熱***");
+				break;
+				
+			case 6:
+				System.out.println("***蹂曄/喻檣瞪僥煽錳曖 熱***");
+				break;
+				
+			case 7:
+				System.out.println("***唸р煽錳曖 熱***");
+				break;
+				
+			case 8:
+				System.out.println("***薑褐煽錳曖 熱***");
+				break;
+				
+			case 0:
+				System.out.println("*** 蟾晦 詭景煎 檜翕***");
+				break;
+
+
+
+		
+				
+			}
 		}
-
-		System.out.println("*** "+ addyear +"喇紫 撮旎 婦溼 等檜攪 蹺陛 高擊 厥戲撮蹂 ");
-		System.out.print("й檣 遴歜 100Щ煎 橾 陽 熱櫛 : ");
-		long result100 = scan.nextInt();
-
-		System.out.print("й檣 遴歜 80Щ煎 橾 陽 熱櫛 : ");
-		long result80 = scan.nextInt();
-
-		System.out.print("й檣 遴歜 50Щ煎 橾 陽 熱櫛 : ");
-		long result50 = scan.nextInt();
-
-		System.out.print("й檣 遴歜 30Щ煎 橾 陽 熱櫛 : ");
-		long result30 = scan.nextInt();
-
-		FareDTO newOne = new FareDTO(addyear,result100,result80,result50,result30);
-		addyear++;
-		PeopleController.addFare(newOne);
-		PeopleController.allFare();
-
 		}
+		
 
 		break;
 
@@ -126,25 +149,7 @@ public class StartView {
 			if(result ==0) {
 				break;
 			}
-				
-		System.out.print("*** 熱薑 й 翱紫蒂 殮溘ж撮蹂 : ");
-		int resultyear = scan.nextInt();
 		
-		System.out.print("й檣 遴歜 100Щ煎 橾 陽 熱櫛 : ");
-		double result100 = scan.nextInt();
-
-		System.out.print("й檣 遴歜 80Щ煎 橾 陽 熱櫛 : ");
-		double result80 = scan.nextInt();
-
-		System.out.print("й檣 遴歜 50Щ煎 橾 陽 熱櫛 : ");
-		double result50 = scan.nextInt();
-
-		System.out.print("й檣 遴歜 30Щ煎 橾 陽 熱櫛 : ");
-		double result30 = scan.nextInt();
-		
-		FareDTO newOne2 = new FareDTO(resultyear,result100,result80,result50,result30);
-		PeopleController.fareUpdate(resultyear, newOne2);
-		PeopleController.getFare(resultyear);
 		
 			}
 
@@ -168,13 +173,23 @@ public class StartView {
 			}
 		System.out.print("*** 餉薯 й 喇紫蒂 殮溘ж撮蹂 : ");
 		int resultyear = scan.nextInt();
-		PeopleController.fareDelete(resultyear);
-		PeopleController.allFare();
 		}
 		break;
+		
+		case 9:
+			while(result!=0) {
+				System.out.println("*** 等檜攪蒂 餉薯 ж衛啊蝗棲梱? 1(yes) /0(no) ");
+				result = scan.nextInt();
+				if(result ==0) {
+					break;
+				}
+			System.out.print("*** 餉薯 й 喇紫蒂 殮溘ж撮蹂 : ");
+			int resultyear = scan.nextInt();
+			}
+			break;
 
 		
-		case 6:
+		case 0:
 			System.out.println();
 			System.out.println("*** Щ煎斜極檜 謙猿 腎歷蝗棲棻. ***");
 			break;
@@ -184,34 +199,32 @@ public class StartView {
 
 }
 
-//		controller.getPeopleAll();
-		// insert - 褒ぬ
-//		 controller.peopleInsert(new Hospital_PeopleDTO("畦畦選",1,2,3,4,5,6,7,8,9,10));
+// controller.getPeopleAll();
+// insert - 褒ぬ
+// controller.peopleInsert(new Hospital_PeopleDTO("畦畦選",1,2,3,4,5,6,7,8,9,10));
 
-		// 賅萇 匐儀
-//		 controller.getPeopleAll();
+// 賅萇 匐儀
+// controller.getPeopleAll();
 
-		// ж釭虜 匐儀 -撩奢
-//		 controller.getPeople("鬼翕掘");
+// ж釭虜 匐儀 -撩奢
+// controller.getPeople("鬼翕掘");
 
-		// delete - 撩奢
-//		 controller.peopleDelete("鬼翕掘"); -撩奢
-//		 controller.peopleDelete("歎だ掘");
-//		 controller.getPeopleAll(); 
+// delete - 撩奢
+// controller.peopleDelete("鬼翕掘"); -撩奢
+// controller.peopleDelete("歎だ掘");
+// controller.getPeopleAll();
 
-//		 update --  撩奢
-//		 controller.peopleUpdate( "辨骯掘",30); 
-//		 controller.getPeopleAll();
-		 
-		 
-//		 controller.getTotalAll(); -撩奢
-//		 controller.getTotal("辨骯掘"); -撩奢
-//		 controller.totalInsert(new Hospital_TotalDTO("畦畦畦選",1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26));
-			//褒ぬ !
-//		 controller.totalDelete("歎だ掘"); --撩奢
-//		 controller.getTotalAll();
-//		 controller.totalUpdate( "辨骯掘",30); 
+// update -- 撩奢
+// controller.peopleUpdate( "辨骯掘",30);
+// controller.getPeopleAll();
 
+// controller.getTotalAll(); -撩奢
+// controller.getTotal("辨骯掘"); -撩奢
+// controller.totalInsert(new
+// Hospital_TotalDTO("畦畦畦選",1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26));
+// 褒ぬ !
+// controller.totalDelete("歎だ掘"); --撩奢
+// controller.getTotalAll();
+// controller.totalUpdate( "辨骯掘",30);
 
-	}
 }
