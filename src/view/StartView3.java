@@ -63,159 +63,157 @@ public class StartView3 {
 				while (result != 0) {
 					System.out.println("*** 로케이션 별 병원 검색을 하시겠습니까? 1(yes) / 0(no) ");
 					try {
-					result = scan.nextInt();
-					}
-					catch(Exception e) {
+						result = scan.nextInt();
+					} catch (Exception e) {
 						System.out.println("숫자를 입력하세요");
-						//e.printStackTrace();
+						// e.printStackTrace();
 					}
-						
-					}
-					int result2 = 10;
-					if (result == 0 || result2 == 0) {
-						break;
-					}
-					while (result2 != 0) {
-						System.out.println("*** " + "찾고자 하는 병원을 고르시오 ");
-						System.out.println("1)종합병원   2)병원   3)치과   4)한의원/한방병원   5)조산원   6)요양/노인전문병원   "
-								+ "7)결핵병원   8)정신병원   0)뒤로 돌아가기");
-						result2 = scan.nextInt();
 
-						switch (result2) {
+				}
+				int result2 = 10;
+				if (result == 0 || result2 == 0) {
+					break;
+				}
+				while (result2 != 0) {
+					System.out.println("*** " + "찾고자 하는 병원을 고르시오 ");
+					System.out.println("1)종합병원   2)병원   3)치과   4)한의원/한방병원   5)조산원   6)요양/노인전문병원   "
+							+ "7)결핵병원   8)정신병원   0)뒤로 돌아가기");
+					result2 = scan.nextInt();
 
-						case 1:
-							System.out.println("***종합병원의 수***");
-							try {
-								for (int i = 0; i < Hospital_TotalDAO.getAll().size(); i++) {
-									System.out.println(Hospital_TotalDAO.getAll().get(i).getLoc() + "지역의" + " 종합병원의 수:"
-											+ Hospital_TotalDAO.getAll().get(i).getGnr_Hospital() + " | 종합병원 병상 수 :"
-											+ Hospital_TotalDAO.getAll().get(i).getGnr_Bed());
-									Thread.sleep(300);
-								}
-							} catch (Exception e) {
-								System.out.println("숫자를 입력하세요");
-								//e.printStackTrace();
+					switch (result2) {
+
+					case 1:
+						System.out.println("***종합병원의 수***");
+						try {
+							for (int i = 0; i < Hospital_TotalDAO.getAll().size(); i++) {
+								System.out.println(Hospital_TotalDAO.getAll().get(i).getLoc() + "지역의" + " 종합병원의 수:"
+										+ Hospital_TotalDAO.getAll().get(i).getGnr_Hospital() + " | 종합병원 병상 수 :"
+										+ Hospital_TotalDAO.getAll().get(i).getGnr_Bed());
+								Thread.sleep(300);
 							}
-							break;
-
-						case 2:
-							System.out.println("***병원의 수***");
-							try {
-								for (int i = 0; i < Hospital_TotalDAO.getAll().size(); i++) {
-									System.out.println(Hospital_TotalDAO.getAll().get(i).getLoc() + "지역의" + " 병원의 수:"
-											+ Hospital_TotalDAO.getAll().get(i).getHospital() + " |병원 병상 수: "
-											+ Hospital_TotalDAO.getAll().get(i).getH_Bed());
-									Thread.sleep(300);
-								}
-							} catch (Exception e) {
-								System.out.println("숫자를 입력하세요");
-								//e.printStackTrace();
-							}
-							break;
-
-						case 3:
-							System.out.println("***치과의 수***");
-							try {
-								for (int i = 0; i < Hospital_TotalDAO.getAll().size(); i++) {
-									System.out.println(Hospital_TotalDAO.getAll().get(i).getLoc() + "지역의" + " 치과의 수:"
-											+ Hospital_TotalDAO.getAll().get(i).getDent_Hospital() + " | 치과 병상 수: "
-											+ +Hospital_TotalDAO.getAll().get(i).getDent_Bed() + " | 치과의원 수"
-											+ Hospital_TotalDAO.getAll().get(i).getDent_Clinic_Hospital()
-											+ " | 치과의원 병상 수" + Hospital_TotalDAO.getAll().get(i).getDent_Clinic_Bed());
-									Thread.sleep(300);
-								}
-							} catch (Exception e) {
-								System.out.println("숫자를 입력하세요");
-								//e.printStackTrace();
-							}
-							break;
-
-						case 4:
-							System.out.println("***한의원/한방병원의 수***");
-							try {
-								for (int i = 0; i < Hospital_TotalDAO.getAll().size(); i++) {
-									System.out.println(Hospital_TotalDAO.getAll().get(i).getLoc() + "지역의" + " 한의원의 수:"
-											+ Hospital_TotalDAO.getAll().get(i).getHerb_Hospital() + " | 한의원 병상 수: "
-											+ +Hospital_TotalDAO.getAll().get(i).getHerb_Bed() + " | 치과의원 수"
-											+ Hospital_TotalDAO.getAll().get(i).getHerb_Clinic_Hospital()
-											+ " | 치과의원 병상 수" + Hospital_TotalDAO.getAll().get(i).getHerb_Clinic_Bed());
-									Thread.sleep(300);
-								}
-							} catch (Exception e) {
-								System.out.println("숫자를 입력하세요");
-								//e.printStackTrace();
-							}
-							break;
-
-						case 5:
-							System.out.println("***조산원의 수***");
-							try {
-								for (int i = 0; i < Hospital_TotalDAO.getAll().size(); i++) {
-									System.out.println(Hospital_TotalDAO.getAll().get(i).getLoc() + "지역의" + " 조산원의 수:"
-											+ Hospital_TotalDAO.getAll().get(i).getMaternity_Hospital()
-											+ " | 조산원 병상 수 :" + Hospital_TotalDAO.getAll().get(i).getMaternity_Bed());
-									Thread.sleep(300);
-								}
-							} catch (Exception e) {
-								System.out.println("숫자를 입력하세요");
-								//e.printStackTrace();
-							}
-							break;
-
-						case 6:
-							System.out.println("***요양/노인전문병원의 수***");
-							try {
-								for (int i = 0; i < Hospital_TotalDAO.getAll().size(); i++) {
-									System.out.println(Hospital_TotalDAO.getAll().get(i).getLoc() + "지역의" + " 요양 병원의 수:"
-											+ Hospital_TotalDAO.getAll().get(i).getSnr_Hospital() + " | 요양 병원의 병상 수: "
-											+ +Hospital_TotalDAO.getAll().get(i).getSnr_Bed() + " | 노인 병원의 수"
-											+ Hospital_TotalDAO.getAll().get(i).getAff_Hospital() + " | 노인병원의 병상 수"
-											+ Hospital_TotalDAO.getAll().get(i).getAff_Bed());
-									Thread.sleep(300);
-								}
-							} catch (Exception e) {
-								System.out.println("숫자를 입력하세요");
-								//e.printStackTrace();
-							}
-							break;
-
-						case 7:
-							System.out.println("***결핵병원의 수***");
-							try {
-								for (int i = 0; i < Hospital_TotalDAO.getAll().size(); i++) {
-									System.out.println(Hospital_TotalDAO.getAll().get(i).getLoc() + "지역의" + " 결핵병원의 수:"
-											+ Hospital_TotalDAO.getAll().get(i).getTub_Hospital() + " | 결핵병원 병상 수 :"
-											+ Hospital_TotalDAO.getAll().get(i).getTub_Bed());
-									Thread.sleep(300);
-								}
-							} catch (Exception e) {
-								System.out.println("숫자를 입력하세요");
-								//e.printStackTrace();
-							}
-							break;
-
-						case 8:
-							System.out.println("***정신병원의 수***");
-							try {
-								for (int i = 0; i < Hospital_TotalDAO.getAll().size(); i++) {
-									System.out.println(Hospital_TotalDAO.getAll().get(i).getLoc() + "지역의" + " 정신병원의 수:"
-											+ Hospital_TotalDAO.getAll().get(i).getMental_hospital() + " | 정신병원 병상 수 :"
-											+ Hospital_TotalDAO.getAll().get(i).getMental_Bed());
-									Thread.sleep(300);
-								}
-							} catch (Exception e) {
-								System.out.println("숫자를 입력하세요");
-								//e.printStackTrace();
-							}
-							break;
-
-						case 0:
-							System.out.println("*** 초기 메뉴로 이동***");
-							break;
-
+						} catch (Exception e) {
+							System.out.println("숫자를 입력하세요");
+							// e.printStackTrace();
 						}
+						break;
+
+					case 2:
+						System.out.println("***병원의 수***");
+						try {
+							for (int i = 0; i < Hospital_TotalDAO.getAll().size(); i++) {
+								System.out.println(Hospital_TotalDAO.getAll().get(i).getLoc() + "지역의" + " 병원의 수:"
+										+ Hospital_TotalDAO.getAll().get(i).getHospital() + " |병원 병상 수: "
+										+ Hospital_TotalDAO.getAll().get(i).getH_Bed());
+								Thread.sleep(300);
+							}
+						} catch (Exception e) {
+							System.out.println("숫자를 입력하세요");
+							// e.printStackTrace();
+						}
+						break;
+
+					case 3:
+						System.out.println("***치과의 수***");
+						try {
+							for (int i = 0; i < Hospital_TotalDAO.getAll().size(); i++) {
+								System.out.println(Hospital_TotalDAO.getAll().get(i).getLoc() + "지역의" + " 치과의 수:"
+										+ Hospital_TotalDAO.getAll().get(i).getDent_Hospital() + " | 치과 병상 수: "
+										+ +Hospital_TotalDAO.getAll().get(i).getDent_Bed() + " | 치과의원 수"
+										+ Hospital_TotalDAO.getAll().get(i).getDent_Clinic_Hospital() + " | 치과의원 병상 수"
+										+ Hospital_TotalDAO.getAll().get(i).getDent_Clinic_Bed());
+								Thread.sleep(300);
+							}
+						} catch (Exception e) {
+							System.out.println("숫자를 입력하세요");
+							// e.printStackTrace();
+						}
+						break;
+
+					case 4:
+						System.out.println("***한의원/한방병원의 수***");
+						try {
+							for (int i = 0; i < Hospital_TotalDAO.getAll().size(); i++) {
+								System.out.println(Hospital_TotalDAO.getAll().get(i).getLoc() + "지역의" + " 한의원의 수:"
+										+ Hospital_TotalDAO.getAll().get(i).getHerb_Hospital() + " | 한의원 병상 수: "
+										+ +Hospital_TotalDAO.getAll().get(i).getHerb_Bed() + " | 치과의원 수"
+										+ Hospital_TotalDAO.getAll().get(i).getHerb_Clinic_Hospital() + " | 치과의원 병상 수"
+										+ Hospital_TotalDAO.getAll().get(i).getHerb_Clinic_Bed());
+								Thread.sleep(300);
+							}
+						} catch (Exception e) {
+							System.out.println("숫자를 입력하세요");
+							// e.printStackTrace();
+						}
+						break;
+
+					case 5:
+						System.out.println("***조산원의 수***");
+						try {
+							for (int i = 0; i < Hospital_TotalDAO.getAll().size(); i++) {
+								System.out.println(Hospital_TotalDAO.getAll().get(i).getLoc() + "지역의" + " 조산원의 수:"
+										+ Hospital_TotalDAO.getAll().get(i).getMaternity_Hospital() + " | 조산원 병상 수 :"
+										+ Hospital_TotalDAO.getAll().get(i).getMaternity_Bed());
+								Thread.sleep(300);
+							}
+						} catch (Exception e) {
+							System.out.println("숫자를 입력하세요");
+							// e.printStackTrace();
+						}
+						break;
+
+					case 6:
+						System.out.println("***요양/노인전문병원의 수***");
+						try {
+							for (int i = 0; i < Hospital_TotalDAO.getAll().size(); i++) {
+								System.out.println(Hospital_TotalDAO.getAll().get(i).getLoc() + "지역의" + " 요양 병원의 수:"
+										+ Hospital_TotalDAO.getAll().get(i).getSnr_Hospital() + " | 요양 병원의 병상 수: "
+										+ +Hospital_TotalDAO.getAll().get(i).getSnr_Bed() + " | 노인 병원의 수"
+										+ Hospital_TotalDAO.getAll().get(i).getAff_Hospital() + " | 노인병원의 병상 수"
+										+ Hospital_TotalDAO.getAll().get(i).getAff_Bed());
+								Thread.sleep(300);
+							}
+						} catch (Exception e) {
+							System.out.println("숫자를 입력하세요");
+							// e.printStackTrace();
+						}
+						break;
+
+					case 7:
+						System.out.println("***결핵병원의 수***");
+						try {
+							for (int i = 0; i < Hospital_TotalDAO.getAll().size(); i++) {
+								System.out.println(Hospital_TotalDAO.getAll().get(i).getLoc() + "지역의" + " 결핵병원의 수:"
+										+ Hospital_TotalDAO.getAll().get(i).getTub_Hospital() + " | 결핵병원 병상 수 :"
+										+ Hospital_TotalDAO.getAll().get(i).getTub_Bed());
+								Thread.sleep(300);
+							}
+						} catch (Exception e) {
+							System.out.println("숫자를 입력하세요");
+							// e.printStackTrace();
+						}
+						break;
+
+					case 8:
+						System.out.println("***정신병원의 수***");
+						try {
+							for (int i = 0; i < Hospital_TotalDAO.getAll().size(); i++) {
+								System.out.println(Hospital_TotalDAO.getAll().get(i).getLoc() + "지역의" + " 정신병원의 수:"
+										+ Hospital_TotalDAO.getAll().get(i).getMental_hospital() + " | 정신병원 병상 수 :"
+										+ Hospital_TotalDAO.getAll().get(i).getMental_Bed());
+								Thread.sleep(300);
+							}
+						} catch (Exception e) {
+							System.out.println("숫자를 입력하세요");
+							// e.printStackTrace();
+						}
+						break;
+
+					case 0:
+						System.out.println("*** 초기 메뉴로 이동***");
+						break;
+
 					}
-				
+				}
 
 				break;
 
@@ -242,13 +240,13 @@ public class StartView3 {
 								System.out.println(Hospital_PeopleDAO.getAll().get(result - 1));
 							} catch (Exception e) {
 								System.out.println("숫자를 입력하세요");
-								//e.printStackTrace();
+								// e.printStackTrace();
 							}
 
 						}
 					} catch (Exception e) {
 						System.out.println("숫자를 입력하세요");
-						//e.printStackTrace();
+						// e.printStackTrace();
 					}
 
 				}
@@ -279,13 +277,13 @@ public class StartView3 {
 
 								} catch (Exception e) {
 									System.out.println("숫자를 입력하세요");
-									//e.printStackTrace();
+									// e.printStackTrace();
 								}
 
 							}
 						} catch (Exception e) {
 							System.out.println("숫자를 입력하세요");
-							//e.printStackTrace();
+							// e.printStackTrace();
 						}
 					} else {
 						System.out.println("잘못 된 입력 입니다. 다시 입력하세요.");
@@ -301,6 +299,9 @@ public class StartView3 {
 					int password = 1541;
 					int inputPassword = 100;
 					int count = 0;
+					boolean resultBoolean= false;
+					String loc = null;
+
 					while (count < 4) {
 						System.out.print("비밀번호를 입력하세요 :");
 						inputPassword = scan.nextInt();
@@ -315,125 +316,164 @@ public class StartView3 {
 								System.out.println("  3 - 수정하기 ");
 								System.out.println("  4 - 삭제하기");
 								System.out.println("  0 - 기본 메뉴로 돌아가기 ");
-							
 
-							System.out.print(" 메뉴를 선택하세요 :  ");
-							mangerResult = scan.nextInt();
-							switch (mangerResult) {
-							case 1:
-								System.out.println("*********** 로케이션 별 병원 전체 보기 **************");
-								System.out.println();
-								System.out.println();
-								System.out.println(
-										" ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
-								controller.getTotalAll();
-								System.out.println(
-										" ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
-								System.out.println();
-								System.out.println();
-
-								System.out.println("*********** 로케이션 별 의료인력수 전체 보기 **************");
-								System.out.println();
-								System.out.println();
-								System.out.println(
-										" ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
-								controller.getPeopleAll();
-								System.out.println(
-										"ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
-								System.out.println();
-								System.out.println();
-								break;
-
-							case 2:
-								System.out.println("**************  데 이 터  추 가 하 기  ************** ");			
-								System.out.println();
-								System.out.println();
-								System.out.println("1.해당 지역 병원 추가 ");
-								System.out.println("2.해당 지역 의료인력 추가 ");
-								System.out.println("3.뒤로가기");
+								System.out.print(" 메뉴를 선택하세요 :  ");
 								mangerResult = scan.nextInt();
-								if(mangerResult ==1) {
-									 controller.peopleInsert(new Hospital_PeopleDTO("꺄꺄울",1,2,3,4,5,6,7,8,9,10));
-									 controller.totalInsert(new Hospital_TotalDTO
-											 ("꺄꺄꺄울",1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26));
-										
-								}
-								else if(mangerResult==2) {
+								switch (mangerResult) {
+								case 1:
+									System.out.println("*********** 로케이션 별 병원 전체 보기 **************");
+									System.out.println();
+									System.out.println();
+									System.out.println(
+											" ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
+									controller.getTotalAll();
+									System.out.println(
+											" ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
+									System.out.println();
+									System.out.println();
+
+									System.out.println("*********** 로케이션 별 의료인력수 전체 보기 **************");
+									System.out.println();
+									System.out.println();
+									System.out.println(
+											" ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
+									controller.getPeopleAll();
+									System.out.println(
+											"ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
+									System.out.println();
+									System.out.println();
+									break;
+
+								case 2:
+									System.out.println("**************  데 이 터  추 가 하 기  ************** ");
+									System.out.println();
+									System.out.println();
+									System.out.println("1.해당 지역 병원 추가 ");
+									System.out.println("2.해당 지역 의료인력 추가 ");
+									System.out.println("3.뒤로가기");
+									System.out.print(" 메뉴를 고르세요 : ");
+
+									mangerResult = scan.nextInt();
+									System.out.println();
+									int update = 0;
+									if (mangerResult == 1) {
+										System.out.print("추가 할 지역을 입력하세요:");
+										loc = scan.next();
+										System.out.print("추가 할 값을 입력하세여 :");
 									
-								}
-								else if(mangerResult==3){
+										controller.totalInsert(new Hospital_TotalDTO(loc, 1, 2, 3, 4, 5, 6, 7, 8, 9,
+												10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26));
+
+									} else if (mangerResult == 2) {
+										System.out.print("추가 할 지역을 입력하세요:");
+										loc = scan.next();
+										System.out.print("추가 할 값을 입력하세여 :");
+										controller.peopleInsert(
+												new Hospital_PeopleDTO(loc, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
+									} else if (mangerResult == 3) {
+										break;
+									} else {
+										System.out.println("잘못 된 입력입니다. 다시 입력 해주세요 ");
+									}
+
 									break;
-								}
-								else {
-									System.out.println("잘못 된 입력입니다. 다시 입력 해주세요 ");
-								}
 
+								case 3:
+									System.out.println("**************  데 이 터  수 정 하 기  ************** ");
+									System.out.println();
+									System.out.println();
+									System.out.println("1.해당 지역 병원 수정 ");
+									System.out.println("2.해당 지역 의료인력 수정 ");
+									System.out.println("3.뒤로가기");
+									System.out.println();
+									System.out.print(" 메뉴를 고르세요 : ");
+									mangerResult = scan.nextInt();
 
-								break;
+									if (mangerResult == 1) {
+										System.out.print("수정 할 지역을 입력하세요:");
+										loc = scan.next();
+										System.out.print("변경할 값을 입력하세여 :");
+										update = scan.nextInt();
+										controller.totalUpdate(loc, update);
 
-							case 3:
-								System.out.println("**************  데 이 터  수 정 하 기  ************** ");			
-								System.out.println();
-								System.out.println();
-								System.out.println("1.해당 지역 병원 수정 ");
-								System.out.println("2.해당 지역 의료인력 수정 ");
-								System.out.println("3.뒤로가기");
-								mangerResult = scan.nextInt();
-								String loc =null;
-								int update = 0;
-								if(mangerResult ==1) {
-									System.out.print("지역을 입력하세요:");
-									 loc =scan.next();
-									 System.out.print("변경할 값을 입력하세여 :");
-									 update = scan.nextInt();
-									 controller.totalUpdate( loc,update);
+									} else if (mangerResult == 2) {
+										System.out.print("지역을 입력하세요:");
+										loc = scan.next();
+										System.out.print("변경할 값을 입력하세여 :");
+										update = scan.nextInt();
+										controller.peopleUpdate(loc, update);
 
-								}
-								else if(mangerResult==2) {
-									System.out.print("지역을 입력하세요:");
-									loc =scan.next();
-									 System.out.print("변경할 값을 입력하세여 :");
-									 update = scan.nextInt();
-									 controller.peopleUpdate( loc,update);
-
-								}
-								else if(mangerResult==3){
+									} else if (mangerResult == 3) {
+										break;
+									} else {
+										System.out.println("잘못 된 입력입니다. 다시 입력 해주세요 ");
+									}
 									break;
-								}
-								else {
-									System.out.println("잘못 된 입력입니다. 다시 입력 해주세요 ");
-								}
-								break;
 
-							case 4:
-								System.out.println("**************  데 이 터  삭 제 하 기  ************** ");			
-								System.out.println();
-								System.out.println();
-								System.out.println("1.해당 지역 병원 삭제 ");
-								System.out.println("2.해당 지역 의료인력 삭제 ");
-								System.out.println("3.뒤로가기");
-								mangerResult = scan.nextInt();
-								if(mangerResult ==1) {
-									 controller.totalDelete("송파구");
+								case 4:
+									while (mangerResult != 3) {
+										System.out.println("**************  데 이 터  삭 제 하 기  ************** ");
+										System.out.println();
+										System.out.println();
+										System.out.println("1.해당 지역 병원 삭제 ");
+										System.out.println("2.해당 지역 의료인력 삭제 ");
+										System.out.println("3.뒤로가기");
+										System.out.println();
+										System.out.print(" 메뉴를 고르세요 : ");
+										mangerResult = scan.nextInt();
+										if (mangerResult == 1) {
+											System.out.print("삭제 할 지역을 입력하세요:");
+											loc = scan.next();
+											try {
+												for (int i = 0; i < Hospital_TotalDAO.getAll().size(); i++) {
+													if (loc == Hospital_TotalDAO.getAll().get(i).getLoc()) {
+														controller.totalDelete(loc);
+														System.out.println("해당 지역 병원 데이터 삭제 성공");
+													} 
+													else {
+														System.out.println("해당하는 지역은 존재하지 않습니다.");
+													}
 
-								}
-								else if(mangerResult==2) {
-									 controller.peopleDelete("꺄꺄꺄울"); 
+												}
+											} catch (Exception e) {
+												System.out.println("정확한 지역명을 입력하세요 ");
+												// e.printStackTrace();
+											}
+										} else if (mangerResult == 2) {
+											System.out.print("삭제 할 지역을 입력하세요:");
+											loc = scan.next();
+											try {
+												for (int i = 0; i < Hospital_PeopleDAO.getAll().size(); i++) {
+													if (loc == Hospital_PeopleDAO.getAll().get(i).getLoc()) {
+														controller.peopleDelete(loc);
+														resultBoolean =true;
+													} 
+												}
+												if(resultBoolean) {
+													System.out.println("해당 지역 의료 인력 데이터 삭제 성공");
+												}
+												else {
+												System.out.println("해당하는 지역은 존재하지 않습니다.");
+												}
+											} catch (Exception e) {
+												System.out.println("정확한 지역명을 입력하세요 ");
+												// e.printStackTrace();
+											}
 
-								}
-								else if(mangerResult==3){
+										} else if (mangerResult == 3) {
+											break;
+										} else {
+											System.out.println("잘못 된 입력입니다. 다시 입력 해주세요 ");
+										}
+										break;
+									}
+									
+									
+								case 0:
+									System.out.println("기본 메뉴로 돌아갑니다.");
 									break;
-								}
-								else {
-									System.out.println("잘못 된 입력입니다. 다시 입력 해주세요 ");
-								}
-								break;
 
-							case 0:
-								System.out.println("기본 메뉴로 돌아갑니다.");
-								break;
-
-							}
+								}
 							}
 						} else {
 							count++;
