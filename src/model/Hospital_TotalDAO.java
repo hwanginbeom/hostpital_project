@@ -97,7 +97,7 @@ public class Hospital_TotalDAO {
 			// Connection con =DBUtil.getConnection(); // 위에서 null값으로 초기화 try 문이 안될수도있어서.
 			con = DBUtil.getConnection(); // 연결 한다 !
 			// 고정된 문장으로 sql 실행 객체 생성(접속 객체)
-			pstmt = con.prepareStatement("insert into HOSPITAL_TOTAL values(?,?,?,?,?,?,?,?,?,?,?)"); // 컬럼수 만큼 ?한다.
+			pstmt = con.prepareStatement("insert into HOSPITAL_TOTAL values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"); // 컬럼수 만큼 ?한다.
 			// ?에 데이터 값 순차적으로 셋팅(문장실행객체)
 			pstmt.setString(1, newDept.getLoc()); // 물음표 순번 / 값에대한 것
 			pstmt.setInt(2, newDept.getGnr_Hospital());
