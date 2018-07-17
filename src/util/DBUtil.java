@@ -19,7 +19,7 @@ public class DBUtil {
 	// Connection 객체 반환 메소드
 	public static Connection getConnection() throws SQLException { // 클라이언트도 반드시 상황을 알아야 되기 때문에 throws로 한다.
 																	// endview 단에서 출력을 해야되기떄문에 여기서는 syso 안쓰게 하기위
-		return DriverManager.getConnection("jdbc:oracle:thin:@127.0.0.1:1521:xe", "SCOTT", "TIGER");
+		return DriverManager.getConnection("jdbc:oracle:thin:@127.0.0.1:1523:xe", "SCOTT", "TIGER");
 	}
 
 	// select 문 자원 반환 - Connection , Statment , ResultSet

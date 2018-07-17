@@ -232,7 +232,7 @@ public class Hospital_TotalDTO {
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
 		builder.append("병원 = ");
-		builder.append("지역");
+		builder.append("지역:");
 		builder.append(loc);
 		builder.append(" | 종합 병원=");
 		builder.append(gnr_Hospital);
